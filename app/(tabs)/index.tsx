@@ -5,6 +5,7 @@ import SearchBar from "@/components/SearchBar";
 import {useRouter} from "expo-router";
 import useFetch from "@/services/useFetch";
 import {getMovies} from "@/services/api";
+import MovieCard from "@/components/MovieCard";
 
 
 export default function Index() {
@@ -41,7 +42,9 @@ export default function Index() {
                             <FlatList
                                 data={movies}
                                 renderItem={({item}) => (
-                                    <Text className="text-white text-sm">{item.title}</Text>
+                                    // <Text className="text-white text-sm">{item.title}</Text>
+
+                                    <MovieCard {...item} />
                                 )}
                                 keyExtractor={(item) => item.id.toString()}
                                 numColumns={3}
@@ -51,7 +54,7 @@ export default function Index() {
                                     paddingRight: 5,
                                     marginBottom: 10,
                                 }}
-                                className="mt-2 pb-32"
+
                                 scrollEnabled={false}
                             />
                         </>
