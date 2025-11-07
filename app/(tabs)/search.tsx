@@ -1,4 +1,4 @@
-import {View, Image, Text, FlatList} from 'react-native'
+import {View, Image, Text, FlatList, ActivityIndicator} from 'react-native'
 import {icons} from "@/constants/icons";
 import {images} from "@/constants/images";
 import useFetch from "@/services/useFetch";
@@ -24,55 +24,88 @@ const Search = () => {
 
 
     useEffect(()=>{
-        const time=setTimeout(()=>{
-            refetch()
+        const time=setTimeout(async ()=>{
+            if(search.trim()){
+                await  refetch()
+            }else{
+                reset()
+            }
         },500)
 
         //清除计时器
         return ()=>{clearTimeout(time)}
     },[search])
 
-    // console.log("param search", movies)
+
     return (
         <View className="flex-1 bg-primary">
             <Image source={images.bg} className="absolute w-full z-0 " resizeMode="cover"/>
-            <Image source={icons.logo} className="w-12 h-10 mt-20 mb-5 mx-auto"/>
-            {/*<Text className="  mt-30 mx-auto text-white">{search}</Text>*/}
-            <View className="flex-1">
+
                 <FlatList data={movies}
                           renderItem={({item}) => (
-
                               <MovieCard {...item} />
-
                           )}
                           keyExtractor={item => item.id.toString()}
                           numColumns={3}
                           columnWrapperStyle={{
                               justifyContent: "flex-start",
-                              gap: 20,
-                              paddingRight: 5,
-                              marginBottom: 10,
+                              gap: 16,
+                              marginVertical: 16
+                          }}
+                          contentContainerStyle={{
+                              paddingBottom: 100
                           }}
 
                           ListHeaderComponent={
                               <>
-                                  <SearchBar value={search}
-                                             placeholder="search for a movie"
-                                             onChangeText={setSearch}
-                                             onPress={() => {
-                                                 refetch()
-                                             }}
-                                  />
-                                  <View style={{ minHeight: 10 }}>
+                                  <View className="w-full flex-row justify-center mt-20 items-center">
+                                      <Image source={icons.logo} className="w-12 h-10" />
                                   </View>
+                                  <View className="my-5">
+                                      <SearchBar value={search}
+                                                 placeholder="search for a movie"
+                                                 onChangeText={setSearch}
+                                                 onPress={() => {
+                                                     refetch()
+                                                 }}
+                                      />
+                                  </View>
+
+                                  {loading && (
+                                      <ActivityIndicator
+                                          size="large"
+                                          color="#0000ff"
+                                          className="my-3"
+                                      />
+                                  )}
+
+                                  {error && (
+                                      <Text className="text-red-500 px-5 my-3">
+                                          Error: {error.message}
+                                      </Text>
+                                  )}
+
+                                  {!loading &&
+                                      !error &&
+                                      search.trim() &&
+                                      movies?.length! > 0 && (
+                                          <Text className="text-xl text-white font-bold">
+                                              Search Results for{" "}
+                                              <Text className="text-accent">{search}</Text>
+                                          </Text>
+                                      )}
                               </>
-
-
                           }
-                          className="mt-2 pb-32"
-                />
-            </View>
 
+
+
+                          ListEmptyComponent={!loading&& !error?(
+                              <View className="">
+                                <Text className="text-gray-500 text-center mt-20">{search.trim()?`No movies found for ${search}`:'Search for a movie'}</Text>
+                              </View>
+                          ):null}
+                          className=" px-5"
+                />
         </View>
     )
 }

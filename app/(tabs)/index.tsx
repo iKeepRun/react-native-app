@@ -4,8 +4,9 @@ import {icons} from "@/constants/icons";
 import SearchBar from "@/components/SearchBar";
 import {useRouter} from "expo-router";
 import useFetch from "@/services/useFetch";
-import {getMovies} from "@/services/api";
+import {getMovies, trendingMovies} from "@/services/api";
 import MovieCard from "@/components/MovieCard";
+import TrendingMovieCard from "@/components/TrendingMovieCard";
 
 
 export default function Index() {
@@ -16,6 +17,8 @@ export default function Index() {
     } = useFetch(() => getMovies({query: ''}))
 
     const router = useRouter();
+
+    // console.log(movies)
     return (
         <View
             className=" flex-1 bg-primary"
@@ -37,6 +40,15 @@ export default function Index() {
                     <View className="flex-1 mt-5">
                         <SearchBar placeholder="search for a movie" onPress={() => router.push("/search")}/>
                         <>
+
+                            <FlatList data={trendingMovies}
+                                      renderItem={(item)=> (
+                                <TrendingMovieCard {...item} />
+                            )}
+                                      keyExtractor={(item) => item.id.toString()}
+                                      horizontal={true}
+                             />
+
                             <Text className="text-lg text-white font-bold mt-5 mb-3">Latest movies</Text>
 
                             <FlatList

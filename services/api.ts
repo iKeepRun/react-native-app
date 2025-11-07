@@ -25,3 +25,10 @@ export const getMovies = async ({query}:{query:string}) => {
 
     return data.results
 }
+
+
+export const trendingMovies=[
+    {title:'The Godfather',id:1,poster_path:'/3NhZQ7XEU2QWn7tH5nuDrlXKkpA.jpg'},
+    {title:'The Rats',id:2,poster_path:'/yzqHt4m1SeY9FbPrfZ0C2Hi9x1s.jpg'},
+    {title:"KPop Demon Hunters",id:3,poster_path:'/5Gr4amaB1xxeYAEMOdrVutaWwgz.jpg'},
+]
