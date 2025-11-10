@@ -18,7 +18,7 @@ export default function Index() {
 
     const router = useRouter();
 
-    // console.log(movies)
+    console.log(movies)
     return (
         <View
             className=" flex-1 bg-primary"
@@ -43,10 +43,13 @@ export default function Index() {
 
                             <FlatList data={trendingMovies}
                                       renderItem={(item)=> (
-                                <TrendingMovieCard {...item} />
+                                <TrendingMovieCard {...item}
+                                // className="w-full"
+                                />
                             )}
                                       keyExtractor={(item) => item.id.toString()}
                                       horizontal={true}
+                                      showsHorizontalScrollIndicator={false}
                              />
 
                             <Text className="text-lg text-white font-bold mt-5 mb-3">Latest movies</Text>

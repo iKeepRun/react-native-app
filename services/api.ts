@@ -28,7 +28,8 @@ export const getMovies = async ({query}:{query:string}) => {
 
 
 export const trendingMovies=[
-    {title:'The Godfather',id:1,poster_path:'/3NhZQ7XEU2QWn7tH5nuDrlXKkpA.jpg'},
+    {title:'Stolen Girl',id:1,poster_path:"/zT7Lhw3BhJbMkRqm9Zlx2YGMsY0.jpg"},
     {title:'The Rats',id:2,poster_path:'/yzqHt4m1SeY9FbPrfZ0C2Hi9x1s.jpg'},
     {title:"KPop Demon Hunters",id:3,poster_path:'/5Gr4amaB1xxeYAEMOdrVutaWwgz.jpg'},
+    {title:"The Ugly Stepsistes",id:4,poster_path:"/rayAREIKtSinuov10GvrZHyXfXH.jpg"},
 ]
