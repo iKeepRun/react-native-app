@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b2f6dbad-f779-473d-bd6e-691717c5d6b9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TrendingMovieCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TrendingMovieCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/saved.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/saved.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/movies/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/movies/[id].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +32,10 @@
     &quot;url&quot;: &quot;https://github.com/iKeepRun/react-native-app.git&quot;,
     &quot;accountId&quot;: &quot;eef155f2-4ff1-47e7-88b2-ac37f0b978e5&quot;
   }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
 }</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -131,7 +136,10 @@
       <workItem from="1762396646809" duration="4956000" />
       <workItem from="1762473319913" duration="16340000" />
       <workItem from="1762732484353" duration="597000" />
-      <workItem from="1762735151083" duration="4619000" />
+      <workItem from="1762735151083" duration="11615000" />
+      <workItem from="1762842375655" duration="6079000" />
+      <workItem from="1762905036607" duration="13224000" />
+      <workItem from="1763000247502" duration="3041000" />
     </task>
     <servers />
   </component>

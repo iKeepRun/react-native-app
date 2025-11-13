@@ -18,7 +18,7 @@ export default function Index() {
 
     const router = useRouter();
 
-    console.log(movies)
+    // console.log("movie list",movies)
     return (
         <View
             className=" flex-1 bg-primary"
@@ -79,6 +79,5 @@ export default function Index() {
             </ScrollView>
             {/*</View>*/}
         </View>
-    )
-        ;
+    );
 }

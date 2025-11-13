@@ -8,14 +8,13 @@ const TabIcon = ({icon, name, focused}: { icon: ImageSourcePropType, name: strin
     // console.log("xxxxxxxs",images.highlight),
     focused ? (
         <ImageBackground source={images.highlight}
-                         className="flex flex-row w-full flex-1 min-w-[112px] min-h-16 mt-4 justify-center items-center rounded-full overflow-hidden">
+                         className=" flex flex-row w-full flex-1 min-w-[112px] min-h-14 mt-4 justify-center items-center rounded-full overflow-hidden">
             <Image source={icon} tintColor="#151312" className="size-5"/>
             <Text className="text-secondary text-base font-semibold ml-2">{name}</Text>
         </ImageBackground>
     ) : (
         <View className="size-full items-center justify-center mt-4 rounded-full ">
             <Image source={icon} tintColor="#A8B5DB" className="size-5"/>
-            {/*<Text className="text-secondary text-base font-semibold ml-2">{name}</Text>*/}
         </View>
     )
 )
@@ -50,17 +49,17 @@ const _Layout = () => {
             }}/>
             <Tabs.Screen name="search" options={{
                 title: "search", headerShown: false,
-                tabBarIcon: ({focused}) => (<TabIcon icon={icons.search} name="search" focused={focused}/>
+                tabBarIcon: ({focused}) => (<TabIcon icon={icons.search} name="Search" focused={focused}/>
                 )
             }}/>
             <Tabs.Screen name="saved" options={{
                 title: "saved", headerShown: false,
-                tabBarIcon: ({focused}) => (<TabIcon icon={icons.save} name="saved" focused={focused}/>
+                tabBarIcon: ({focused}) => (<TabIcon icon={icons.save} name="Save" focused={focused}/>
                 )
             }}/>
             <Tabs.Screen name="profile" options={{
                 title: "profile", headerShown: false,
-                tabBarIcon: ({focused}) => (<TabIcon icon={icons.person} name="profile" focused={focused}/>
+                tabBarIcon: ({focused}) => (<TabIcon icon={icons.person} name="Profile" focused={focused}/>
                 )
             }}/>
         </Tabs>
